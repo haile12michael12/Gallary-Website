@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <header class="glass-panel">
+        <h1 class="neon-text">NEXUS GALLERY</h1>
+        <p class="subtitle">The future of digital collections</p>
+        
+        <div class="search-container">
+            <input type="text" id="search-input" class="glass-input" placeholder="Search gallery...">
+            <button id="search-btn" class="neon-btn"><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+    
+    <nav class="filter-nav glass-panel">
+        <div class="filter-title">
+            <span class="neon-text-small">FILTER BY:</span>
+        </div>
+        <div class="filter-options">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="nature">Nature</button>
+            <button class="filter-btn" data-filter="urban">Urban</button>
+            <button class="filter-btn" data-filter="abstract">Abstract</button>
+            <button class="filter-btn" data-filter="space">Space</button>
+            <button class="filter-btn" data-filter="custom">Custom</button>
+        </div>
+    </nav>
+    
+    <main>
+        <section class="uploader-section glass-panel">
+            <h2 class="section-title neon-text-small">ADD TO GALLERY</h2>
+            <div class="upload-container" id="upload-container">
+                <div class="upload-area" id="upload-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & drop images here or click to select</p>
+                    <input type="file" id="file-input" accept="image/*" multiple hidden>
+                </div>
+                <div class="upload-controls">
+                    <div class="form-group">
+                        <label for="tag-input">Tags (comma separated):</label>
+                        <input type="text" id="tag-input" class="glass-input" placeholder="nature, abstract, space...">
+                    </div>
+                    <button id="upload-btn" class="neon-btn">Add to Gallery</button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="gallery-section">
+            <h2 class="section-title neon-text-small">GALLERY</h2>
+            <div class="gallery-container" id="gallery-container">
+                <!-- Gallery items will be dynamically inserted here -->
+                <div class="empty-state" id="empty-gallery">
+                    <i class="fas fa-images"></i>
+                    <p>Your gallery is empty. Upload images to get started!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Fullscreen Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content glass-panel">
+            <button class="modal-close" id="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-image-container">
+                <img id="modal-image" src="" alt="Gallery Image">
+            </div>
+            <div class="modal-info">
+                <div class="modal-tags" id="modal-tags"></div>
+                <div class="modal-controls">
+                    <button class="modal-nav-btn" id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="modal-nav-btn" id="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="glass-panel">
+        <p>Futuristic Gallery &copy; 2023 | <span class="neon-text-small">NEXUS</span></p>
+    </footer>
+    
+    <script src="js/storage.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
